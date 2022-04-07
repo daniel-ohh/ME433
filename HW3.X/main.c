@@ -96,12 +96,15 @@ int main() {
             
             if (PORTBbits.RB4 == 0) {  //if button is still pushed
                 _CP0_SET_COUNT(0);
-                for (i=0;i<4;i++) {  //two duty cycles
-                    while (_CP0_GET_COUNT() < 12000000) {;} //delay by .5s
-                    LATAbits.LATA4=!PORTAbits.RA4;
-                    _CP0_SET_COUNT(0);
-                }
+//                for (i=0;i<4;i++) {  //two duty cycles
+//                    while (_CP0_GET_COUNT() < 12000000) {;} //delay by .5s
+//                    LATAbits.LATA4=!PORTAbits.RA4;
+//                    _CP0_SET_COUNT(0);
+//                }
+                LATAbits.LATA4 = 1;
+                while (_CP0_GET_COUNT() < 12000000) {;} //delay by .5s to spamming the screen
                 sprintf(m,"Hello!\r\n");
+                LATAbits.LATA4 = 0;
                 WriteUART1(m);
             }            
          }
