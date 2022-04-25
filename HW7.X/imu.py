@@ -5,7 +5,10 @@
 # sudo apt-get install python-matplotlib
 
 import serial
-ser = serial.Serial('COM5',230400)
+import scipy
+from scipy import signal
+
+ser = serial.Serial('/dev/tty.usbserial-0232BFA7',230400)
 print('Opening port: ')
 print(ser.name)
 
@@ -37,18 +40,25 @@ print('Data collection complete')
 # plot it
 import matplotlib.pyplot as plt 
 t = range(len(ax)) # time array
+ax = signal.savgol_filter(ax,50,5)
+ay = signal.savgol_filter(ay,50,5)
+az = signal.savgol_filter(az,50,5)
 plt.plot(t,ax,'r*-',t,ay,'b*-',t,az,'k*-')
 plt.ylabel('G value')
 plt.xlabel('sample')
 plt.show()
 
 t = range(len(gx)) # time array
+gx = signal.savgol_filter(gx,50,5)
+gy = signal.savgol_filter(gy,50,5)
+gz = signal.savgol_filter(gz,50,5)
 plt.plot(t,gx,'r*-',t,gy,'b*-',t,gz,'k*-')
 plt.ylabel('Omega value')
 plt.xlabel('sample')
 plt.show()
 
 t = range(len(temp)) # time array
+temp = signal.savgol_filter(temp,50,5)
 plt.plot(t,temp,'r*-')
 plt.ylabel('Temperature value')
 plt.xlabel('sample')

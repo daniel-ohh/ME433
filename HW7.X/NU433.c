@@ -64,9 +64,8 @@ void NU433setup() {
   // configure TX & RX pins as output & input pins
   U1STAbits.UTXEN = 1;
   U1STAbits.URXEN = 1;
-  // configure hardware flow control without RTS and CTS
-  U1MODEbits.UEN = 0;
-
+//  // configure hardware flow control without RTS and CTS
+//  U1MODEbits.UEN = 0;
   // enable the uart
   U1MODEbits.ON = 1;
 
