@@ -26,7 +26,7 @@ int main() {
         ssd1306_clear();
         ssd1306_update();
         count = _CP0_GET_COUNT();
-        time = count/48000000;
+        time = count/24000000;
         i = 1/time;
         sprintf(array,"FPS: %0.2f", i);
         drawStr(62,24,array);

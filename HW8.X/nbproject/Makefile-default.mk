@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=i2c_master_noint.c mpu6050.c NU433.c ssd1306.c main.c font.c
+SOURCEFILES_QUOTED_IF_SPACED=i2c_master_noint.c mpu6050.c NU433.c ssd1306.c font.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/i2c_master_noint.o ${OBJECTDIR}/mpu6050.o ${OBJECTDIR}/NU433.o ${OBJECTDIR}/ssd1306.o ${OBJECTDIR}/main.o ${OBJECTDIR}/font.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/i2c_master_noint.o.d ${OBJECTDIR}/mpu6050.o.d ${OBJECTDIR}/NU433.o.d ${OBJECTDIR}/ssd1306.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/font.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/i2c_master_noint.o ${OBJECTDIR}/mpu6050.o ${OBJECTDIR}/NU433.o ${OBJECTDIR}/ssd1306.o ${OBJECTDIR}/font.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/i2c_master_noint.o.d ${OBJECTDIR}/mpu6050.o.d ${OBJECTDIR}/NU433.o.d ${OBJECTDIR}/ssd1306.o.d ${OBJECTDIR}/font.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/i2c_master_noint.o ${OBJECTDIR}/mpu6050.o ${OBJECTDIR}/NU433.o ${OBJECTDIR}/ssd1306.o ${OBJECTDIR}/main.o ${OBJECTDIR}/font.o
+OBJECTFILES=${OBJECTDIR}/i2c_master_noint.o ${OBJECTDIR}/mpu6050.o ${OBJECTDIR}/NU433.o ${OBJECTDIR}/ssd1306.o ${OBJECTDIR}/font.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=i2c_master_noint.c mpu6050.c NU433.c ssd1306.c main.c font.c
+SOURCEFILES=i2c_master_noint.c mpu6050.c NU433.c ssd1306.c font.c main.c
 
 
 
@@ -131,17 +131,17 @@ ${OBJECTDIR}/ssd1306.o: ssd1306.c  .generated_files/flags/default/ec07649940da58
 	@${RM} ${OBJECTDIR}/ssd1306.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/ssd1306.o.d" -o ${OBJECTDIR}/ssd1306.o ssd1306.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/ef89f041c296c4f359134f21b71d4964dc04f5ef .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/font.o: font.c  .generated_files/flags/default/ab068e35085fb28fe01af4d66bb49bf5d92aec8b .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/font.o.d 
 	@${RM} ${OBJECTDIR}/font.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/font.o.d" -o ${OBJECTDIR}/font.o font.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/ef89f041c296c4f359134f21b71d4964dc04f5ef .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 else
 ${OBJECTDIR}/i2c_master_noint.o: i2c_master_noint.c  .generated_files/flags/default/f953754de777ac2b8df35a2c25421c4e960e1a75 .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
@@ -168,17 +168,17 @@ ${OBJECTDIR}/ssd1306.o: ssd1306.c  .generated_files/flags/default/867d9c6eb0b6ae
 	@${RM} ${OBJECTDIR}/ssd1306.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/ssd1306.o.d" -o ${OBJECTDIR}/ssd1306.o ssd1306.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/14c525a60ef208cf4012499e2c89d0b342c6ee10 .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/font.o: font.c  .generated_files/flags/default/96924238f37e7e71d206a97658a4be9b3ce6fdf0 .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/font.o.d 
 	@${RM} ${OBJECTDIR}/font.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/font.o.d" -o ${OBJECTDIR}/font.o font.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/14c525a60ef208cf4012499e2c89d0b342c6ee10 .generated_files/flags/default/402796be0ef6e42f31b496febf7fb3b3ed014bbb
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -fno-common -MP -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 
