@@ -35,8 +35,8 @@ void ws2812b_setColor(wsColor * c, int numLEDs) {
         // loop through each color bit, MSB first
         for (j = 7; j >= 0; j--) {              //RED
             // if the msb bit is a 1
-            if ((c[i].r & 0x01)) {
-//            if ((c[i].r & 0x80) >> 7) {
+            if ((c[i].r & 0x01)) {                //checks if lsb is a 1, couldn't get my msb code working 
+//            if ((c[i].r & 0x80) >> 7) {           //checks if msb is a 1, wouldnt work for a reason i never figured out
                 // the high is longer
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
