@@ -14,31 +14,31 @@
 
 int main() {
     NU433setup();
+    LATAbits.LATA4 = 1;
     i2c_master_setup();
     ws2812b_setup();
-//    wsColor c[4];
-    wsColor c;
-    c = HSBtoRGB(180,0.3,0.4);
-//    c[0] = HSBtoRGB(60,0.3,0.4);
-//    c[1] = HSBtoRGB(30,0.3,0.4);
-//    c[2] = HSBtoRGB(60,0.3,0.4);
-//    c[3] = HSBtoRGB(90,0.3,0.4);
+    int i;
+    wsColor c[4];
+//    c = HSBtoRGB(0,0.3,0.4);
+    float colorval[4];
+    colorval[0] = 0;
+    colorval[1] = 45;
+    colorval[2] = 90;
+    colorval[3] = 135;
     
     while (1) {
+        c[0] = HSBtoRGB(colorval[0],0.6,0.01);
+        c[1] = HSBtoRGB(colorval[1],0.6,0.01);
+        c[2] = HSBtoRGB(colorval[2],0.6,0.01);
+        c[3] = HSBtoRGB(colorval[3],0.6,0.01);
+        ws2812b_setColor(c, 4);
         
-//        for (i=0;i<4;i++) {
-//            c[i] = HSBtoRGB(j,0.7,0.4);
-//            j = j+30; 
-//            if (j >= 360) {
-//                j = 0;
-//            }
-//        }
-        LATAbits.LATA4 = 1;
-        ws2812b_setColor(&c, 4);
-//        j = j+30;
-//        if (j>=360) {
-//            j = 0;
-//        }
+        for (i=0;i<4;i++) {
+            colorval[i] = colorval[i] +.1;
+            if (colorval[i] > 360) {
+                colorval[i] = 0;
+            }
+        }
         
         }
     }

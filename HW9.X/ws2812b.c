@@ -7,6 +7,7 @@
 #define LOWTIME 15 // number of 48MHz cycles to be low for 0.35uS
 #define HIGHTIME 65 // number of 48MHz cycles to be high for 1.65uS
 
+
 // setup Timer2 for 48MHz, and setup the output pin
 void ws2812b_setup() {
     T2CONbits.TCKPS = 0b00; // Timer2 prescaler N=1 (1:1)
@@ -34,7 +35,8 @@ void ws2812b_setColor(wsColor * c, int numLEDs) {
         // loop through each color bit, MSB first
         for (j = 7; j >= 0; j--) {              //RED
             // if the msb bit is a 1
-            if ((c[i].r & 0b10000000) >> 7) {
+            if ((c[i].r & 0x01)) {
+//            if ((c[i].r & 0x80) >> 7) {
                 // the high is longer
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
@@ -49,12 +51,13 @@ void ws2812b_setColor(wsColor * c, int numLEDs) {
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
             }
-            c[i].r << 1;
+            c[i].r >> 1;
         }
         
         for (j = 7; j >= 0; j--) {              //GREEN
             // if the bit is a 1
-            if ((c[i].g & 0b10000000) >> 7) {
+//            if ((c[i].g & 0x80) >> 7) {
+            if (c[i].g & 0x01) {
                 // the high is longer
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
@@ -69,11 +72,12 @@ void ws2812b_setColor(wsColor * c, int numLEDs) {
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
             }
-            c[i].g << 1;
+            c[i].g >> 1;
         }
         for (j = 7; j >= 0; j--) {              //BLUE
             // if the bit is a 1
-            if ((c[i].b & 0b10000000) >> 7) {
+//            if ((c[i].b & 0x80) >> 7) {
+            if (c[i].b & 0x01) {
                 // the high is longer
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
@@ -88,7 +92,7 @@ void ws2812b_setColor(wsColor * c, int numLEDs) {
                 delay_times[nB] = delay_times[nB - 1] + HIGHTIME;
                 nB++;
             }
-            c[i].b << 1;
+            c[i].b >> 1;
         }
     }
 
